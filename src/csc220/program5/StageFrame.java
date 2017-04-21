@@ -17,7 +17,6 @@
  *
  */
 package csc220.program5;
-
 import csc220.drawing.Camera;
 import csc220.list.List;
 import java.awt.Graphics;
@@ -38,7 +37,7 @@ public class StageFrame extends javax.swing.JFrame {
         initComponents();
         characters = new List<>();
         characters.add(new csc220.program5.sample.RoundHead(10, 30, 50, 1000));
-        characters.add(new csc220.program5.oliverar.Frog(100, 50, 10, 500));
+        characters.add(new csc220.program5.oliverar.Frog(100, 50, 50, 500));
         camera = new Camera();
         chosenCharacter = null;
         gameOver = false;
