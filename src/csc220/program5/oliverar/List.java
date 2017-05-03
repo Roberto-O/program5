@@ -10,41 +10,48 @@ public class List<E> extends csc220.list.List<E> {
    
    //  This nested class replaces the one in csc220.list.List
    protected class ListAddIterator<T extends E> extends csc220.list.List<E>.ListAddIterator<E> {
-       
-       private static final boolean DEBUGGING = true;
-      
+        
         protected Node<E> prevNode = null;
         
         @Override
         public E next() {
-            prevNode= nextNode;
+            prevNode = nextNode;
             return super.next();
-        }
-
-        // For debugging purposes.
-        private void printNodes(String s) {
-            if (!DEBUGGING)
-                return;
-            System.out.print(s);
-            if (prevNode != null) {
-                System.out.print("--previous data = " + prevNode.data);
-            }
-            if (nextNode != null) {
-                System.out.print("--next data = " + nextNode.data);               
-            }
-            System.out.println("");
         }
         
         @Override 
         public void addBeforeNext(E e) {
-            printNodes("(oliverar)Add before next under construction--data to add = " + e);
+            Node<E> tmp = new Node<>();
+            tmp.data = e;
+            
+            if (nextNode != null) {
+                if(first.data.equals(nextNode.data)){    // just goes back and forth two points *BUG*
+                    first.next = tmp;
+                    tmp.next = nextNode;
+                }
+                else{ //in between
+                    prevNode.next = tmp; 
+                    tmp.next = nextNode;
+                }
+            }else{ //last 
+                prevNode.next = tmp;
+                tmp.next = nextNode;
+            }
         }
         
         @Override
-        public void remove() {
-            printNodes("(oliverar)Remove under construction");
+        public void remove() { //you need to click in order
+            Node<E> tmp = new Node<>();
+            tmp = prevNode.next;
+            
+            if(prevNode == nextNode){
+                tmp.next = tmp;
+                
+            }else if(first == prevNode){
+                first = tmp;
+            }else if(last == prevNode){
+                last = tmp;
+            }
         }
-     }
-   
-   
+     } 
 }
