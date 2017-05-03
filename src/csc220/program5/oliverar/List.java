@@ -25,7 +25,7 @@ public class List<E> extends csc220.list.List<E> {
             tmp.data = e;
             
             if (nextNode != null) {
-                if(first.data.equals(nextNode.data)){    // just goes back and forth two points *BUG*
+                if(first == nextNode){    // just goes back and forth two points *BUG*
                     first.next = tmp;
                     tmp.next = nextNode;
                 }
@@ -63,5 +63,5 @@ public class List<E> extends csc220.list.List<E> {
             prevNode = null;
 
         }
-     } 
+    } 
 }
