@@ -40,18 +40,28 @@ public class List<E> extends csc220.list.List<E> {
         }
         
         @Override
-        public void remove() { //you need to click in order
-            Node<E> tmp = new Node<>();
-            tmp = prevNode.next;
+        public void remove() { 
             
-            if(prevNode == nextNode){
-                tmp.next = tmp;
-                
-            }else if(first == prevNode){
-                first = tmp;
-            }else if(last == prevNode){
-                last = tmp;
+            if(prevNode == null){
+                throw new IllegalStateException();
             }
+            
+            if (prevNode == first) {
+                first = nextNode;  
+            }else{
+                Node<E> tmp = first;
+                    while (tmp.next != prevNode) {
+                        tmp = tmp.next;
+                    }
+                tmp.next = nextNode;
+            }
+            
+            if(prevNode == last){ 
+                last = prevNode;
+            }
+            
+            prevNode = null;
+
         }
      } 
 }
