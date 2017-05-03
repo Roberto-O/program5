@@ -18,11 +18,11 @@ import java.awt.Point;
 public class MarioHead extends GameCharacter{
         
     public MarioHead(int over, int down, int width, int height, int moveInterval) {
-        super(over, down, width, height, moveInterval, new List<Point>());
-        animationPath.add(new Point(over, down));
-        animationPath.add(new Point(over + 100, down));
-        animationPath.add(new Point(over, down + 100));
-        animationPath.add(new Point(over + 100, down + 100));
+        super(over - 10, down - 70, width, height, moveInterval, new List<Point>());
+        animationPath.add(new Point(over - 10 , down -70));
+        animationPath.add(new Point(over + 100, down - 70));
+        animationPath.add(new Point(over + 50, down + 50));
+        animationPath.add(new Point(over + 250, down + 70));
       //  this.animationPath.add(new Point(over, down));
     }
     
@@ -51,16 +51,33 @@ public class MarioHead extends GameCharacter{
           g.fillRect(getOver() + 65, getDown() + 40, getWidth() - 45 , getHeight() - 25);
           g.fillRect(getOver() + 60, getDown() + 100, getWidth() + 10 , getHeight() - 45);
           
+          g.setColor(new Color(255,173,96));//hands
+          g.fillRect(getOver() -40 , getDown() + 180, getWidth()  , getHeight() -10 );
+          g.fillRect(getOver() + 100 , getDown() + 180, getWidth() , getHeight() -10 );
+          
+          
           g.setColor(Color.RED); //clothes
-          g.fillRect(getOver() - 10, getDown() + 130, getWidth() + 80 , getHeight() + 3 );
+          g.fillRect(getOver() - 10, getDown() + 130, getWidth() + 75 , getHeight() + 3 );
+          g.fillRect(getOver() - 25, getDown() + 145, getWidth() + 75 , getHeight() -25 );
+          g.fillRect(getOver() + 5, getDown() + 145, getWidth() + 75 , getHeight() -25 );
+          g.fillRect(getOver() - 40, getDown() + 160, getWidth() + 75 , getHeight() -40 );
+          g.fillRect(getOver() + 25, getDown() + 160, getWidth() + 75 , getHeight() -40 );
           g.setColor(Color.BLUE);
           g.fillRect(getOver() + 20, getDown() + 130, getWidth() -35 , getHeight() + 3 );
           g.fillRect(getOver() + 70, getDown() + 130, getWidth() -35 , getHeight() + 3 );
           g.fillRect(getOver() + 20, getDown() + 160, getWidth() +10 , getHeight() -27 );
           g.fillRect(getOver() + 7 , getDown() + 193, getWidth() +40 , getHeight() -27 );
+          g.fillRect(getOver() -10 , getDown() + 210, getWidth() - 10 , getHeight() -27 );
+          g.fillRect(getOver() + 75 , getDown() + 210, getWidth() -10 , getHeight() -27 );
           g.setColor(Color.YELLOW);//button
-          g.fillRect(getOver() + 20, getDown() + 193, getWidth() - 50 , getHeight() -50 );
-          g.fillRect(getOver() + 85, getDown() + 193, getWidth() - 50 , getHeight() -50 );
+          g.fillRect(getOver() + 20, getDown() + 193, getWidth() - 40 , getHeight() -40 );
+          g.fillRect(getOver() + 75, getDown() + 193, getWidth() - 40 , getHeight() -40 );
+          g.setColor(new Color(139,69,19));//shoes
+          g.fillRect(getOver() -27 , getDown() + 243, getWidth() - 10 , getHeight() -27 );
+          g.fillRect(getOver() + 87 , getDown() + 243, getWidth() -10 , getHeight() -27 );
+          g.fillRect(getOver() -40 , getDown() + 256, getWidth()  , getHeight() -40 );
+          g.fillRect(getOver() + 90 , getDown() + 256, getWidth()  , getHeight() -40 );
+         
           
 //        g.setColor(Color.getHSBColor(100,100,100)); //Mario's Face
 //        g.fillOval(getOver() -5 , getDown() + 25, getWidth()+10, getHeight()+10);
