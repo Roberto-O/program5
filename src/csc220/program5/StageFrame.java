@@ -21,6 +21,7 @@ package csc220.program5;
 import csc220.drawing.Camera;
 import csc220.list.List;
 import java.awt.Graphics;
+import java.awt.Point;
 import javax.swing.JPanel;
 
 /**
@@ -37,8 +38,9 @@ public class StageFrame extends javax.swing.JFrame {
     public StageFrame() {
         initComponents();
         characters = new List<>();
-        characters.add(new csc220.program5.sample.RoundHead(10, 30, 50, 1000));
-        characters.add(new csc220.program5.chasees.BlockHead(10, 60, 60, 60, 200));
+       // characters.add(new csc220.program5.sample.RoundHead(10, 30, 50, 1000));
+       // characters.add(new csc220.program5.chasees.BlockHead(10, 60, 60, 60, 200));
+        characters.add(new csc220.program5.chasees.MarioHead(70, 100, 60, 60, 1500));
         camera = new Camera();
         chosenCharacter = null;
         gameOver = false;
@@ -161,6 +163,7 @@ public class StageFrame extends javax.swing.JFrame {
                } else {
                     selectLabel.setText("Choose point for character to visit");
                     chosenCharacter = c;
+            
                }
                return;
             }

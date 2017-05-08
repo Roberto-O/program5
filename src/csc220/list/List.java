@@ -53,7 +53,8 @@ public class List<E> implements Iterable<E> {
     protected class ListAddIterator<T extends E> extends ListIterator<E> implements AddIterator<E> {
         @Override
         public void addBeforeNext(E e) {
-            throw new UnsupportedOperationException("Not supported."); 
+      
+           
         }
     }
     
