@@ -13,6 +13,8 @@ import java.awt.Point;
 /**
  *
  * @author Elcain Chase
+ * 5/3/2017
+ * When clicking Mario click near his head to remove the point
  * 
  */
 public class MarioHead extends GameCharacter{
@@ -50,6 +52,7 @@ public class MarioHead extends GameCharacter{
           g.setColor(Color.BLACK);//EYES AND MUST
           g.fillRect(getOver() + 65, getDown() + 40, getWidth() - 45 , getHeight() - 25);
           g.fillRect(getOver() + 60, getDown() + 100, getWidth() + 10 , getHeight() - 45);
+          g.fillRect(getOver() + 80, getDown() + 75, getWidth() - 45 , getHeight() - 35);
           
           g.setColor(new Color(255,173,96));//hands
           g.fillRect(getOver() -40 , getDown() + 180, getWidth()  , getHeight() -10 );
